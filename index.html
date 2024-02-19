@@ -25,15 +25,20 @@
   </head>
   <body>
     <section class="intro">
-      <nav>
-        <a href="#" id="menu.icon"></a>
-        <ul>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#port">Portfolio</a></li>
-          <li><a href="#serv">Services</a></li>
-          <li><a href="#contact">Contact Me</a></li>
-        </ul>
-      </nav>
+      <label class="hamburger-menu">
+        <input type="checkbox" />
+      </label>
+      <aside class="sidebar">
+        <nav>
+          <a href="#" id="menu.icon"></a>
+          <ul>
+            <li><a href="#about">About Me</a></li>
+            <li><a href="#port">Portfolio</a></li>
+            <li><a href="#serv">Services</a></li>
+            <li><a href="#contact">Contact Me</a></li>
+          </ul>
+        </nav>
+      </aside>
       <div class="inner">
         <div class="content">
           <h1>Photography</h1>
@@ -43,7 +48,7 @@
     </section>
     <a name="about"></a>
     <div class="clearfix"></div>
-    <section class="left-col">
+    <section class="left-col-1">
       <h2>About Me</h2>
       <p style="text-indent: 6%">
         I am so grateful for each and every one experience that life has had to
@@ -54,23 +59,47 @@
         comfortble, relaxed atmosphere so you are free to be you.
       </p>
     </section>
-    <section class="sidebar">
-      <img src="image/girl-on-car.jpg" alt="girl-on-car" />
+    <section class="me">
+      <img class="girl-car" src="image/girl-on-car.jpg" alt="girl-on-car" />
     </section>
     <div class="clearfix"></div>
-    <a name="port"></a>
-    <h2>My Portfolio</h2>
-    <section class="one-the-third-port">
-      <img src="image/pexels-trinity-kubassek-246367.jpg" alt="boy-and-girl" />
-      <img src="image/pexels-misael-garcia-1707820.jpg" alt="city" />
-      <img src="image/pexels-matheus-bertelli-573299.jpg" alt="face" />
-      <img src="image/pexels-darwis-alwan-2793170.jpg" alt="road" />
-      <img src="image/pexels-airam-datoon-13448964.jpg" alt="pic-in-pic" />
-      <img src="image/pexels-adam-borkowski-12366581.jpg" alt="subway" />
+    <section class="one-third-port">
+      <a name="port"></a>
+      <h2 class="my-port">My Portfolio</h2>
+      <img
+        class="port-img"
+        src="image/pexels-trinity-kubassek-246367.jpg"
+        alt="boy-and-girl"
+      />
+      <img
+        class="port-img"
+        src="image/pexels-misael-garcia-1707820.jpg"
+        alt="city"
+      />
+      <img
+        class="port-img"
+        src="image/pexels-matheus-bertelli-573299.jpg"
+        alt="face"
+      />
+      <img
+        class="port-img"
+        src="image/pexels-darwis-alwan-2793170.jpg"
+        alt="road"
+      />
+      <img
+        class="port-img"
+        src="image/pexels-airam-datoon-13448964.jpg"
+        alt="pic-in-pic"
+      />
+      <img
+        class="port-img"
+        src="image/pexels-adam-borkowski-12366581.jpg"
+        alt="subway"
+      />
     </section>
     <div class="clearfix"></div>
     <a name="serv"></a>
-    <section class="left-col">
+    <section class="left-col-2">
       <h2>My Services</h2>
       <p style="text-indent: 6%">
         Since I started offer my photography services, I've become a respected
@@ -80,8 +109,7 @@
         aren't happy!
       </p>
     </section>
-    <section class="sidebar">
-      <section class="contact">
+    <section class="sidebar-2">
         <p>
           Wedding Portraits <br class="break" />
           Engagements <br class="Break" />
@@ -91,13 +119,12 @@
           Family Portraits
         </p>
       </section>
-    </section>
     <div class="clearfix"></div>
     <a name="contact"></a>
     <section class="parallax">
       <div parallax-inner></div>
     </section>
-    <div class="clearfix"></div>
+    <!-- <div class="clearfix"></div>
     <h2>Contact Me</h2>
     <section class="contact">
       <p>
@@ -124,7 +151,8 @@
 </html>
 
 <!-- font-family: "Playfair Display", serif; -->
-<!-- font-weight: 500; -->
+    <!-- font-weight: 500; -->
 
-
-<!-- font-family: "Quicksand", sans-serif; -->
+    <!-- font-family: "Quicksand", sans-serif; -->
+  </body>
+</html>

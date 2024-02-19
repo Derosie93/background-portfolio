@@ -2,7 +2,6 @@
 body{
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
     height: 100%;
     width: 100%;
 }
@@ -78,49 +77,189 @@ h1{
 /*start nav*/
 
 nav{
-    float: left;
-    padding: 5% 5% 0 0;
-    height: 50px;
-}
-
-nav ul{
-    list-style: none;
-    float: left;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 130px;
+    
 }
 
 nav ul li{
-    font-family: "Quicksand", sans-serif;
-    font-size: 120%;
+    list-style: none;
+    margin-top: 25px;
 }
 
-nav ul li a{
-    color: #fff;
+a{
     text-decoration: none;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    color: #fff;
 }
 
-nav ul li a:hover{
-    text-decoration: underline;
+*,
+
+*::after
+*::before{
+    box-sizing: border-box;
 }
 
-nav ul, nav:active ul{
-    padding: 8px 0;
-    width: 20%;
-    z-index: 1000;
+:root{
+    --bar-width: 60px;
+    --bar-height: 8px;
+    --hamburger-gap: 6px;
+    --forground: white;
+    --background: #333;
+    --hamburger-margin: 8px;
+    --animation-timing: 200ms ease-in-out;
+    --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2); 
 }
 
-nav li{
-    width: 100%;
-    padding: 8px 0 10px 7px;
-    margin: 0;
-}
-
-nav:hover ul{
-    display: block;
+.hamburger-menu{
+    --x-width: calc(var(--hamburger-height) * 1.41421356237);
+    margin-left: 32px;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: var(--hamburger-gap);
+    width: max-content;
     position: absolute;
+    top: var(--hamburger-margin);
+    left: var(--hamburger-margin);
+    z-index: 2;
+    cursor: pointer;
 }
 
-#menu-icon{
-    width: 30px;
-    height: 26px;
-    background: url(img/nav-icon.png) center;
+.hamburger-menu:has(input:focus-visible)::before,
+.hamburger-menu:has(input:focus-visible)::after,
+.hamburger-menu input:focus-visible{
+    border: 1px solid var(--background);
+    box-shadow: 0 0 0 1px var(--forground);
+}
+
+.hamburger-menu::before,
+.hamburger-menu::after,
+.hamburger-menu input{
+    content: "";
+    width: var(--bar-width);
+    height: var(--bar-height);
+    background-color: var(--forground);
+    border-radius: 9999px;
+    transform-origin: left center;
+    transition: opacity var(--animation-timing), 
+        width var(--animation-timing), rotate var(--animation-timing), 
+        translate var(--animation-timing), background-color var(--animation-timing);
+}
+
+.hamburger-menu input{
+    appearance: none;
+    padding: 0;
+    margin: 0;
+    outline: none;
+    pointer-events: none;
+}
+
+.hamburger-menu:has(input:checked)::before{
+    rotate: 45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / -2);
+}
+
+.hamburger-menu:has(input:checked)::after{
+    rotate: -45deg;
+    width: var(--x-width);
+    translate: 0 calc(var(--bar-height) / 2);
+}
+
+.hamburger-menu input:checked{
+    opacity: 0;
+    width: 0;
+}
+
+
+.sidebar{
+    transition: translate var(--animation-timing);
+    translate: -100%;
+    margin-top: calc(var(--hamburger-height) + var(--hamburger-margin) + 1rem);
+    color: var(--forground);
+    max-width: 10rem;
+    min-height: 50vh;
+    z-index: 99;
+}
+
+.hamburger-menu:has(input:checked) + .sidebar{
+    translate: 0;
+}
+
+.left-col-1{
+    width: 40%;
+    float: left;
+    margin: 4% 0 4% 4%;
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 15%;
+}
+
+.me{
+    width: 36%;
+    float: left;
+    margin: 4%;
+}
+
+.girl-car{
+    height: 275px;
+    width: 250px;
+    margin-top: 20px;
+    margin-left: 17%;
+}
+
+.my-port{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    margin-left: 30%;
+    
+}
+
+.one-third-port{
+    width: 50%;
+    height: 250px;
+    margin-left: 30%;
+    
+}
+
+.port-img{
+    width: 250px;
+    height: 200px;
+    margin-top: 3%;
+    margin-right: 3%;
+}
+
+.clearfix{
+    clear: both;
+    height: 3%;
+}
+
+.left-col-2{
+    width: 30%;
+    float: left;
+    margin: 4% 0 4% 4%;
+    font-size: 14px;
+    margin-top: 20%;
+    margin-left: 15%;
+}
+
+.sidebar-2{
+    width: 30%;
+    margin-top: 20%;
+    float: right;
+    font-size: 16px;
+    font-family: "Playfair Display", serif;
+    font-weight: 500;
+    margin-right: 7%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
